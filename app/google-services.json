@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "719680720734",
+    "project_id": "grocery-5b911",
+    "storage_bucket": "grocery-5b911.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719680720734:android:148498ca94787ddcaa09cf",
+        "android_client_info": {
+          "package_name": "com.student20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719680720734-8j6frjvn8iimegs65khotm9i15u7llri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6vfIG4lUxXFWIWY7lITgsGowGCw_c7f4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719680720734-8j6frjvn8iimegs65khotm9i15u7llri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
