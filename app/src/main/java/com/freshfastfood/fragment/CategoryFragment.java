@@ -200,7 +200,7 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
 //            JsonObject  jobject = jelement.getAsJsonObject();
             try {
                 st = result.get("st").getAsString();
-                idc=result.get("idc").getAsString();
+                idc=result.get("idc").getAsInt();
                 Log.w("result ========",ARG_PARAM3);
             }catch (Exception e) {
                 e.printStackTrace();

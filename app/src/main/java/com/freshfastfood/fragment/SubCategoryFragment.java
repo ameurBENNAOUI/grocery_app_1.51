@@ -53,6 +53,7 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
     SessionManager sessionManager;
     User user;
     int cid = 0;
+    int scid=0;
 
     public SubCategoryFragment() {
         // Required empty public constructor
@@ -79,7 +80,8 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
         View view = inflater.inflate(R.layout.fragment_subcategory, container, false);
         unbinder = ButterKnife.bind(this, view);
         Bundle b = getArguments();
-        cid = b.getInt("id");
+        cid = b.getInt("cat_id");
+        scid=b.getInt("sub_category_id");
         String titel = b.getString("titel");
         if (titel != null) {
             txtTitel.setText("" + titel);
