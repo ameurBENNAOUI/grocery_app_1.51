@@ -179,6 +179,8 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
                 CategoryFragment fragment = new CategoryFragment();
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("arraylist", (Serializable) categoryList);
+                bundle.putString("st","c0");
+
                 fragment.setArguments(bundle);
                 HomeActivity.getInstance().callFragment(fragment);
                 break;

@@ -25,6 +25,7 @@ import com.freshfastfood.retrofit.APIClient;
 import com.freshfastfood.retrofit.GetResult;
 import com.freshfastfood.utils.SessionManager;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -46,7 +47,11 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    public static final String ARG_PARAM3="param3";
+
+    public static String ARG_PARAM3="c0";
+    public static String st="c0";
+    public static String position_="";
+    public static int idc=0;
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
@@ -78,6 +83,13 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Bundle b = getArguments();
+        st = b.getString("st");
+        if (st=="c1"){
+            position_ = b.getString("st");
+        }
+
+
         View view = inflater.inflate(R.layout.fragment_category, container, false);
         unbinder = ButterKnife.bind(this, view);
         categoryList = new ArrayList<>();
@@ -92,22 +104,56 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
 
     @Override
     public void onClickItem(String titel, int position) {
-        Log.e("ApiUrl = ", "mabrouk..........");
-        Log.e("cateList = ", categoryList.toString());
-        homeActivity.showMenu();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("arraylist", (Serializable) categoryList);
+        Log.e("ApiUrl = ", st);
+//        Log.e("cateList = ", categoryList.toString());
+        if (st.equals("c0")){
+            homeActivity.showMenu();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("arraylist", (Serializable) categoryList);
 
-        bundle.putInt("id", position);
-        bundle.putString("titel", titel);
+            bundle.putInt("id", position);
+            bundle.putString("titel", titel);
+            bundle.putString("st","c1");
 
-        Log.e("postion = ", "position .........." + position+"title  : "+titel);
+            CategoryFragment fragment = new CategoryFragment();
+            fragment.setArguments(bundle);
+
+            HomeActivity.getInstance().callFragment(fragment);
+        }else if (st.equals("c1")){
+            Log.e("c111 = ", st);
+            homeActivity.showMenu();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("arraylist", (Serializable) categoryList);
+
+            bundle.putInt("category_id", position);
+//            bundle.putString("titel", titel);
+            bundle.putString("st", "c1");
+
+            CategoryFragment fragment = new CategoryFragment();
+            fragment.setArguments(bundle);
+
+            HomeActivity.getInstance().callFragment(fragment);
+
+        }else if (st.equals("c2")){
+            homeActivity.showMenu();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("arraylist", (Serializable) categoryList);
+            bundle.putInt("cat_id",idc);
+            bundle.putInt("sub_category_id", position);
+            bundle.putString("titel", titel);
+//            bundle.putString("st", "c1");
+
+            SubCategoryFragment fragment = new SubCategoryFragment();
+            fragment.setArguments(bundle);
+
+            HomeActivity.getInstance().callFragment(fragment);
+        }
 
 
-        CategoryFragment fragment = new CategoryFragment();
-        fragment.setArguments(bundle);
+//        Log.e("postion = ", "position .........." + position+"title  : "+titel);
 
-        HomeActivity.getInstance().callFragment(fragment);
+
+
     }
 
     @Override
@@ -118,8 +164,14 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
         HomeActivity.custPrograssbar.prograssCreate(getActivity());
         JSONObject jsonObject = new JSONObject();
         try {
-            Log.e("kkkkkkkkkkk", "jjjjjjj" );
+//            Log.e("kkkkkkkkkkk", "jjjjjjj" );
             jsonObject.put("uid", user.getId());
+            jsonObject.put("st",st);
+
+            if (st=="c1"){
+                jsonObject.put("category_id",position_);
+            }
+
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().getCat((JsonObject) jsonParser.parse(jsonObject.toString()));
             GetResult getResult = new GetResult();
@@ -129,11 +181,39 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
             e.printStackTrace();
         }
     }
+//    public static String optString(JSONObject json, String key)
+//    {
+//        // http://code.google.com/p/android/issues/detail?id=13830
+//        if (json.isNull(key))
+//            return null;
+//        else
+//            return json.optString(key, null);
+//    }
 
     @Override
     public void callback(JsonObject result, String callNo) {
         try {
+
+
             HomeActivity.custPrograssbar.closePrograssBar();
+//            JsonElement jelement = new JsonParser().parse(result.toString());
+//            JsonObject  jobject = jelement.getAsJsonObject();
+            try {
+                st = result.get("st").getAsString();
+                idc=result.get("idc").getAsString();
+                Log.w("result ========",ARG_PARAM3);
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+
+//            ARG_PARAM3=result.get(ca);
+
+
+
+
+
+//            Log.w("result ======",ARG_PARAM3);
+
             if (callNo.equalsIgnoreCase("1") && result.toString() != null) {
                 Gson gson = new Gson();
                 Category category = gson.fromJson(result.toString(), Category.class);
