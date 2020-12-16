@@ -84,10 +84,14 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Bundle b = getArguments();
+        st=b.getString("st");
         String sts = b.getString("st");
+
         String position__=null;
         if (sts.equals("c1")){
             position__ = b.getString("category_id");
+            position_ = b.getString("category_id");
+
         }
 
 
@@ -201,10 +205,12 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
             jsonObject.put("uid", user.getId());
             jsonObject.put("st",st);
 
-//            if (st.equals("c1")){
-////            Log.e("cat  =======",position_);
-//               jsonObject.put("category_id",position_);
-//            }
+            if (st.equals("c1")){
+//            Log.e("cat  =======",position_);
+            jsonObject.put("category_id",position_);
+            Log.e("json json json",String.valueOf(jsonObject));
+            Log.e("position position",position_);
+            }
 
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().getCat((JsonObject) jsonParser.parse(jsonObject.toString()));
@@ -241,10 +247,6 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
             }
 
 //            ARG_PARAM3=result.get(ca);
-
-
-
-
 
 //            Log.w("result ======",ARG_PARAM3);
 
