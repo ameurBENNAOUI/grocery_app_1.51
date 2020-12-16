@@ -84,9 +84,10 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Bundle b = getArguments();
-        st = b.getString("st");
-        if (st=="c1"){
-            position_ = b.getString("st");
+        String sts = b.getString("st");
+        String position__=null;
+        if (sts.equals("c1")){
+            position__ = b.getString("category_id");
         }
 
 
@@ -98,7 +99,15 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         HomeActivity.getInstance().setFrameMargin(60);
+//        if (position__.equals(null)) {
+//            Log.e("position is null","True");
+//            getCategory_(position__);
+//
+//        }else{
+//            getCategory();
+//        }
         getCategory();
+
         return view;
     }
 
@@ -119,8 +128,10 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
             fragment.setArguments(bundle);
 
             HomeActivity.getInstance().callFragment(fragment);
-        }else if (st.equals("c1")){
+        }
+        else if (st.equals("c1")) {
             Log.e("c111 = ", st);
+//            Log.e("postion111 = ", String.valueOf(position));
             homeActivity.showMenu();
             Bundle bundle = new Bundle();
             bundle.putSerializable("arraylist", (Serializable) categoryList);
@@ -134,7 +145,8 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
 
             HomeActivity.getInstance().callFragment(fragment);
 
-        }else if (st.equals("c2")){
+        }
+        else if (st.equals("c2")){
             homeActivity.showMenu();
             Bundle bundle = new Bundle();
             bundle.putSerializable("arraylist", (Serializable) categoryList);
@@ -160,17 +172,39 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
     public void onLongClickItem(View v, int position) {
     }
 
+    private void getCategory_(String position__) {
+        HomeActivity.custPrograssbar.prograssCreate(getActivity());
+        JSONObject jsonObject = new JSONObject();
+        try {
+            Log.e("postion _ postion", "jjjjjjj" );
+            jsonObject.put("uid", user.getId());
+            jsonObject.put("st",st);
+
+
+            jsonObject.put("category_id",position__);
+
+            JsonParser jsonParser = new JsonParser();
+            Call<JsonObject> call = APIClient.getInterface().getCat((JsonObject) jsonParser.parse(jsonObject.toString()));
+            GetResult getResult = new GetResult();
+            getResult.setMyListener(this);
+            getResult.callForLogin(call, "1");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void getCategory() {
         HomeActivity.custPrograssbar.prograssCreate(getActivity());
         JSONObject jsonObject = new JSONObject();
         try {
-//            Log.e("kkkkkkkkkkk", "jjjjjjj" );
+            Log.e("kkkkkkkkkkk", "jjjjjjj" );
             jsonObject.put("uid", user.getId());
             jsonObject.put("st",st);
 
-            if (st=="c1"){
-                jsonObject.put("category_id",position_);
-            }
+//            if (st.equals("c1")){
+////            Log.e("cat  =======",position_);
+//               jsonObject.put("category_id",position_);
+//            }
 
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().getCat((JsonObject) jsonParser.parse(jsonObject.toString()));
