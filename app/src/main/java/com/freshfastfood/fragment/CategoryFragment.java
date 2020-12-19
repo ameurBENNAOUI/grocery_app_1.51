@@ -48,10 +48,11 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
     private static final String ARG_PARAM2 = "param2";
 
 
-    public static String ARG_PARAM3="c0";
+//    public static String ARG_PARAM3="c0";
     public static String st="c0";
-    public static String position_="";
-    public static int idc=0;
+    public static int purview=0;
+    public static int year=0;
+    public static int model=0;
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
@@ -85,14 +86,17 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
                              Bundle savedInstanceState) {
         Bundle b = getArguments();
         st=b.getString("st");
-        String sts = b.getString("st");
+//        String sts = b.getString("st");
+//       Log.e("geted st st ",String.valueOf(b.getString("st")));
+//        String position__=null;
+//        if (st.equals("c1")){
+////            Log.e("geted String ",b.getString("purview"));
 
-        String position__=null;
-        if (sts.equals("c1")){
-            position__ = b.getString("category_id");
-            position_ = b.getString("category_id");
+        purview = b.getInt("purview");
+        year =b.getInt("year");
+        model =b.getInt("model");
 
-        }
+//        }
 
 
         View view = inflater.inflate(R.layout.fragment_category, container, false);
@@ -124,25 +128,37 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
             Bundle bundle = new Bundle();
             bundle.putSerializable("arraylist", (Serializable) categoryList);
 
-            bundle.putInt("id", position);
-            bundle.putString("titel", titel);
+//            bundle.putInt("purview", position);
+//            bundle.putString("titel", titel);
             bundle.putString("st","c1");
+
+
+
+            bundle.putInt("purview", position);
+            bundle.putInt("year",0);
+            bundle.putInt("model",0);
+
 
             CategoryFragment fragment = new CategoryFragment();
             fragment.setArguments(bundle);
 
             HomeActivity.getInstance().callFragment(fragment);
         }
-        else if (st.equals("c1")) {
-            Log.e("c111 = ", st);
+        else if (st.equals("c2")) {
+//            Log.e("c111 = ", st);
 //            Log.e("postion111 = ", String.valueOf(position));
             homeActivity.showMenu();
             Bundle bundle = new Bundle();
             bundle.putSerializable("arraylist", (Serializable) categoryList);
 
-            bundle.putInt("category_id", position);
-//            bundle.putString("titel", titel);
+            bundle.putInt("purview", purview);
+            bundle.putInt("year",position);
+            bundle.putInt("model",model);
+
+            bundle.putString("titel", "titel");
+
             bundle.putString("st", "c1");
+
 
             CategoryFragment fragment = new CategoryFragment();
             fragment.setArguments(bundle);
@@ -150,14 +166,15 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
             HomeActivity.getInstance().callFragment(fragment);
 
         }
-        else if (st.equals("c2")){
+        else if (st.equals("c1")){
             homeActivity.showMenu();
             Bundle bundle = new Bundle();
             bundle.putSerializable("arraylist", (Serializable) categoryList);
-            bundle.putInt("cat_id",idc);
-            bundle.putInt("sub_category_id", position);
+            bundle.putInt("purview",purview);
+            bundle.putInt("year", position);
+            bundle.putInt("model", model);
+
             bundle.putString("titel", titel);
-//            bundle.putString("st", "c1");
 
             SubCategoryFragment fragment = new SubCategoryFragment();
             fragment.setArguments(bundle);
@@ -176,26 +193,7 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
     public void onLongClickItem(View v, int position) {
     }
 
-    private void getCategory_(String position__) {
-        HomeActivity.custPrograssbar.prograssCreate(getActivity());
-        JSONObject jsonObject = new JSONObject();
-        try {
-            Log.e("postion _ postion", "jjjjjjj" );
-            jsonObject.put("uid", user.getId());
-            jsonObject.put("st",st);
 
-
-            jsonObject.put("category_id",position__);
-
-            JsonParser jsonParser = new JsonParser();
-            Call<JsonObject> call = APIClient.getInterface().getCat((JsonObject) jsonParser.parse(jsonObject.toString()));
-            GetResult getResult = new GetResult();
-            getResult.setMyListener(this);
-            getResult.callForLogin(call, "1");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 
     private void getCategory() {
         HomeActivity.custPrograssbar.prograssCreate(getActivity());
@@ -204,13 +202,11 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
             Log.e("kkkkkkkkkkk", "jjjjjjj" );
             jsonObject.put("uid", user.getId());
             jsonObject.put("st",st);
+            jsonObject.put("purview",purview);
+            jsonObject.put("year",year);
+            jsonObject.put("model",model);
 
-            if (st.equals("c1")){
-//            Log.e("cat  =======",position_);
-            jsonObject.put("category_id",position_);
-            Log.e("json json json",String.valueOf(jsonObject));
-            Log.e("position position",position_);
-            }
+
 
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().getCat((JsonObject) jsonParser.parse(jsonObject.toString()));
@@ -238,17 +234,11 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
             HomeActivity.custPrograssbar.closePrograssBar();
 //            JsonElement jelement = new JsonParser().parse(result.toString());
 //            JsonObject  jobject = jelement.getAsJsonObject();
-            try {
-                st = result.get("st").getAsString();
-                idc=result.get("idc").getAsInt();
-                Log.w("result ========",ARG_PARAM3);
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
 
-//            ARG_PARAM3=result.get(ca);
 
-//            Log.w("result ======",ARG_PARAM3);
+//            st=String.valueOf(result.get("st"));
+//
+//            Log.w("result ======",st);
 
             if (callNo.equalsIgnoreCase("1") && result.toString() != null) {
                 Gson gson = new Gson();

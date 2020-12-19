@@ -63,6 +63,11 @@ public class ItemListFragment extends Fragment implements GetResult.MyListener {
     List<ProductItem> productDataList;
     int cid = 0;
     int scid = 0;
+
+    int purview = 0;
+    int year=0;
+    int model=0;
+
     SessionManager sessionManager;
      StaggeredGridLayoutManager gridLayoutManager;
     public static ItemListFragment itemListFragment;
@@ -93,6 +98,15 @@ public class ItemListFragment extends Fragment implements GetResult.MyListener {
         sessionManager = new SessionManager(getActivity());
         cid = b.getInt("cid");
         scid = b.getInt("scid");
+
+        cid=b.getInt("purview");
+
+        scid=b.getInt("year");
+
+        purview = b.getInt("purview");
+        year=b.getInt("year");
+        model=b.getInt("model");
+
         myRecyclerView.setHasFixedSize(true);
         productDataList = new ArrayList<>();
         gridLayoutManager = new StaggeredGridLayoutManager(1, 1);
@@ -162,6 +176,8 @@ public class ItemListFragment extends Fragment implements GetResult.MyListener {
         try {
             jsonObject.put("cid", cid);
             jsonObject.put("sid", scid);
+            jsonObject.put("model",model);
+
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().getGetProduct((JsonObject) jsonParser.parse(jsonObject.toString()));
             GetResult getResult = new GetResult();

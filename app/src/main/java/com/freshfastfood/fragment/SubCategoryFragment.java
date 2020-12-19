@@ -30,6 +30,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.util.Log;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,8 +54,9 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
     Unbinder unbinder;
     SessionManager sessionManager;
     User user;
-    int cid = 0;
-    int scid=0;
+    int purview = 0;
+    int year=0;
+    int model=0;
 
     public SubCategoryFragment() {
         // Required empty public constructor
@@ -80,8 +83,10 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
         View view = inflater.inflate(R.layout.fragment_subcategory, container, false);
         unbinder = ButterKnife.bind(this, view);
         Bundle b = getArguments();
-        cid = b.getInt("cat_id");
-        scid=b.getInt("sub_category_id");
+        purview = b.getInt("purview");
+        year=b.getInt("year");
+        model=b.getInt("model");
+
         String titel = b.getString("titel");
         if (titel != null) {
             txtTitel.setText("" + titel);
@@ -101,9 +106,13 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
     @Override
     public void onClickItem(View v, int cid, int scid) {
         homeActivity.showMenu();
+//        Log.e("cid cid ==",String.valueOf(cid)+"==="+String.valueOf(scid));
+
         Bundle args = new Bundle();
-        args.putInt("cid", cid);
-        args.putInt("scid", scid);
+        args.putInt("purview", purview);
+        args.putInt("year", year);
+        args.putInt("model", scid);
+
         Fragment fragment = new ItemListFragment();
         fragment.setArguments(args);
         HomeActivity.getInstance().callFragment(fragment);
@@ -117,7 +126,9 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
         HomeActivity.custPrograssbar.prograssCreate(getActivity());
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("category_id", cid);
+            jsonObject.put("purview", purview);
+            jsonObject.put("year", year);
+//            jsonObject.put("year", year);
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().getSubcategory((JsonObject) jsonParser.parse(jsonObject.toString()));
             GetResult getResult = new GetResult();
