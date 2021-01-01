@@ -77,9 +77,10 @@
                         android:id="@+id/txt_ordcancel"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_add"      android:gravity="center"
+                        android:background="@drawable/rounded_add"
+                        android:gravity="center"
                         android:padding="5dp"
-                        android:text=" Cancel "
+                        android:text="Annuler"
                         android:textColor="@color/colorGrey2"
                         android:textSize="14sp" />
                 </LinearLayout>

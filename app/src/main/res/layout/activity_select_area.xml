@@ -13,9 +13,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:padding="5dp"
-        android:text="Select Your Area"
-        android:textStyle="bold"
-        android:textSize="18dp" />
+        android:text="Sélectionnez Votre Zone ?"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"

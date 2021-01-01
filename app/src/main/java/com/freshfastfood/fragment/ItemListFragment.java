@@ -178,6 +178,7 @@ public class ItemListFragment extends Fragment implements GetResult.MyListener {
             jsonObject.put("sid", scid);
             jsonObject.put("model",model);
 
+
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().getGetProduct((JsonObject) jsonParser.parse(jsonObject.toString()));
             GetResult getResult = new GetResult();

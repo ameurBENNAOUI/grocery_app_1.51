@@ -41,7 +41,7 @@
             android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Get the Fastest Delivery"
+            android:text="Obtenez la livraison la plus rapide"
             android:textColor="@color/colorBalck"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -50,10 +50,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
             android:padding="5dp"
-            android:fontFamily="@font/coresans_cr_medium"
-            android:text="We will delivery them directly\nto your home"
+            android:text="Nous vous les livrerons directement \n dans votre zone"
             android:textColor="@color/colorBalck"
             android:textSize="14dp"
             android:textStyle="bold" />

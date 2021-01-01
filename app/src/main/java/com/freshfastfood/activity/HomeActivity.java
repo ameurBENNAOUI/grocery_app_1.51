@@ -315,7 +315,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void titleChange() {
-        txtActiontitle.setText("Hello " + user.getName());
+        txtActiontitle.setText("Bonjour " + user.getName());
     }
 
 
@@ -330,7 +330,7 @@ public class HomeActivity extends AppCompatActivity {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name));
-            String shareMessage = "\nLet me recommend you this application\n\n";
+            String shareMessage = "\nLaissez-moi vous recommander cette application\n\n";
             shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName() + "\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "choose one"));

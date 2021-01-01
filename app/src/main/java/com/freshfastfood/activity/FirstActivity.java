@@ -36,9 +36,9 @@ public class FirstActivity extends ActivityManagePermission {
             } else {
                 AlertDialog.Builder builder;
                 builder = new AlertDialog.Builder(FirstActivity.this);
-                builder.setMessage("Please Check Your Internet Connection")
+                builder.setMessage("S'il vous plait, vérifiez votre connexion internet")
                         .setCancelable(false)
-                        .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Quitter", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 Log.e("tem",dialog+""+id);
                                 finish();

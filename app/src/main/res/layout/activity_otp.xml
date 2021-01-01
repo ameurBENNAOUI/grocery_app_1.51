@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
-            android:text="Enter OTP"
+            android:text="Entrer OTP"
             android:textColor="@color/colorGrey1"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -203,7 +203,7 @@
                     android:background="@drawable/rounded_green2"
                     android:elevation="10dp"
                     android:gravity="center"
-                    android:text="Submit"
+                    android:text="Envoyer"
                     android:textColor="@color/colorWhite" />
 
 
@@ -223,7 +223,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="3dp"
-            android:text="Did not receive the code?"
+            android:text="Vous n'avez pas reçu le code?"
             android:textColor="@color/colorGrey2" />
 
         <TextView

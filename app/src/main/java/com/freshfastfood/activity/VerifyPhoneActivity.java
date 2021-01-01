@@ -84,14 +84,18 @@ public class VerifyPhoneActivity extends AppCompatActivity implements GetResult.
         mAuth = FirebaseAuth.getInstance();
         phonenumber = getIntent().getStringExtra("phone");
         phonecode = getIntent().getStringExtra("code");
+        if (phonenumber.startsWith("0")){
+            phonenumber=phonenumber.substring(1);
+            Log.e("new phone ===",phonenumber);
+        }
         sendVerificationCode(phonecode + phonenumber);
-        txtMob.setText("We have sent you an SMS on " + phonecode + " " + phonenumber + "\n with 6 digit verification code");
+        txtMob.setText("Nous vous avons envoyé un SMS le " + phonecode + " " + phonenumber + "\n avec code de vérification à 6 chiffres");
         try {
             new CountDownTimer(60000, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     long seconds = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished);
-                    btnTimer.setText(seconds + " Secound Wait");
+                    btnTimer.setText(seconds + "  Attendre un Instant");
                 }
 
                 @Override
@@ -171,9 +175,9 @@ public class VerifyPhoneActivity extends AppCompatActivity implements GetResult.
         public void onVerificationFailed(FirebaseException e) {
             User user1 = new User();
             user1.setId("0");
-            user1.setName("User");
-            user1.setEmail("user@gmail.com");
-            user1.setMobile("+91 8888888888");
+            user1.setName("Etudiant");
+            user1.setEmail("Etudiant@Etudiant.com");
+            user1.setMobile("+213 657274307");
             sessionManager.setUserDetails("", user1);
             Toast.makeText(VerifyPhoneActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
             finish();

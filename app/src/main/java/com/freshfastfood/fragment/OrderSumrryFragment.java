@@ -65,6 +65,7 @@ import static com.freshfastfood.utils.SessionManager.tax;
 import static com.freshfastfood.utils.Utiles.isRef;
 import static com.freshfastfood.utils.Utiles.isSelect;
 import static com.freshfastfood.utils.Utiles.seletAddress;
+import android.widget.Toast;
 
 
 public class OrderSumrryFragment extends Fragment implements GetResult.MyListener {
@@ -227,7 +228,7 @@ public class OrderSumrryFragment extends Fragment implements GetResult.MyListene
         }
 
         txtTotal.setText(sessionManager.getStringData(CURRUNCY) + new DecimalFormat("##.##").format(totalAmount[0]));
-        btnCuntinus.setText("Place Order - " + sessionManager.getStringData(CURRUNCY) + new DecimalFormat("##.##").format(totalAmount[0]));
+        btnCuntinus.setText("Passer la Commande - " + sessionManager.getStringData(CURRUNCY) + new DecimalFormat("##.##").format(totalAmount[0]));
         txtDiscount.setText(sessionManager.getStringData(CURRUNCY) + " " + sessionManager.getIntData(COUPON));
 
         total = totalAmount[0];
@@ -331,6 +332,8 @@ public class OrderSumrryFragment extends Fragment implements GetResult.MyListene
             getResult.callForLogin(call, "1");
         } catch (JSONException e) {
             e.printStackTrace();
+//            Toast.makeText(getActivity(), " You have Insuffisant credit", Toast.LENGTH_LONG).show();
+
         }
     }
 
@@ -365,8 +368,9 @@ public class OrderSumrryFragment extends Fragment implements GetResult.MyListene
                             Toast.makeText(getActivity(), "Please Update Your Area Name.Because It's Not match with Our Delivery Location", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getActivity(), AddressActivity.class).putExtra("MyClass", selectaddress));
                         } else {
-                            txtAddress.setText(selectaddress.getHno() + "," + selectaddress.getSociety() + "," + selectaddress.getArea() + "," + selectaddress.getLandmark() + "," + selectaddress.getName());
-                            ItemAdp itemAdp = new ItemAdp(getActivity(), myCarts);
+                            // txtAddress.setText(selectaddress.getHno() + "," + selectaddress.getSociety() + "," + selectaddress.getArea() + "," + selectaddress.getLandmark() + "," + selectaddress.getName());
+                            txtAddress.setText(selectaddress.getArea() + "," + selectaddress.getName());
+							ItemAdp itemAdp = new ItemAdp(getActivity(), myCarts);
                             myRecyclerview.setAdapter(itemAdp);
                             update(myCarts);
                         }
@@ -432,13 +436,13 @@ public class OrderSumrryFragment extends Fragment implements GetResult.MyListene
                 startActivity(new Intent(getActivity(), CoupunActivity.class).putExtra("amount", temp).putExtra("payment", PMethod));
                 break;
             case R.id.btn_cuntinus:
-                btnCuntinus.setClickable(false);
+                btnCuntinus.setClickable(true);
                 if (payment.equalsIgnoreCase("Razorpay")) {
                     int temtoal = (int) Math.round(total);
                     startActivity(new Intent(getActivity(), RazerpayActivity.class).putExtra("amount", temtoal).putExtra("detail", paymentItem));
                 } else if (payment.equalsIgnoreCase("Paypal")) {
                     startActivity(new Intent(getActivity(), PaypalActivity.class).putExtra("amount", total).putExtra("detail", paymentItem));
-                } else if (payment.equalsIgnoreCase("Cash On Delivery") || payment.equalsIgnoreCase("Pickup Myself")) {
+                } else if (payment.equalsIgnoreCase("Payez maintenant") || payment.equalsIgnoreCase("Ramasse moi-même")) {
                     sendorderServer();
                 }
 
@@ -451,7 +455,7 @@ public class OrderSumrryFragment extends Fragment implements GetResult.MyListene
     public void clearFragment() {
         sessionManager = new SessionManager(getActivity());
         User user1 = sessionManager.getUserDetails("");
-        HomeActivity.getInstance().titleChange("Hello " + user1.getName());
+        HomeActivity.getInstance().titleChange("Bienvenue " + user1.getName());
         MyOrderFragment homeFragment = new MyOrderFragment();
         getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         getFragmentManager().beginTransaction().replace(R.id.fragment_frame, homeFragment).addToBackStack(null).commit();
@@ -502,7 +506,8 @@ public class OrderSumrryFragment extends Fragment implements GetResult.MyListene
             if (sessionManager != null) {
                 selectaddress = sessionManager.getAddress(address1);
                 if (selectaddress != null) {
-                    txtAddress.setText(selectaddress.getHno() + "," + selectaddress.getSociety() + "," + selectaddress.getArea() + "," + selectaddress.getLandmark() + "," + selectaddress.getName());
+//                    txtAddress.setText(selectaddress.getHno() + "," + selectaddress.getSociety() + "," + selectaddress.getArea() + "," + selectaddress.getLandmark() + "," + selectaddress.getName());
+                    txtAddress.setText(selectaddress.getArea() + "," + selectaddress.getName());
                     update(myCarts);
                     if (isRef) {
                         isRef = false;

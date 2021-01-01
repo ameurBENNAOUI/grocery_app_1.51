@@ -43,7 +43,7 @@
             android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Order directly from the\nApplication"
+            android:text="Commandez directement depuis Application"
             android:textColor="@color/colorBalck"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -52,10 +52,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
             android:padding="5dp"
-            android:fontFamily="@font/coresans_cr_medium"
-            android:text="Fresh &amp; Best Quality Products.\nOrder your products at any time"
+            android:text="Cours au meilleur prix.  Commandez vos produits à tout moment"
             android:textColor="@color/colorBalck"
             android:textSize="14dp"
             android:textStyle="bold" />

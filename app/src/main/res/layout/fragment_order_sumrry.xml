@@ -46,40 +46,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:visibility="visible" />
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="@color/colorGrey0"
-                            android:gravity="center|left"
-                            android:padding="5dp">
 
-                            <ImageView
-                                android:layout_width="42dp"
-                                android:layout_height="42dp"
-                                android:padding="8dp"
-                                android:src="@drawable/ic_iconsticket_filled" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:layout_weight="1"
-                                android:padding="5dp"
-                                android:text="Apply Coupon"
-                                android:textColor="@color/colorBalck"
-                                android:textSize="16dp"
-                                android:textStyle="bold" />
-
-                            <ImageView
-                                android:id="@+id/img_coopncode"
-                                android:layout_width="42dp"
-                                android:layout_height="42dp"
-                                android:background="?android:attr/selectableItemBackgroundBorderless"
-                                android:padding="3dp"
-                                android:src="@drawable/ic_righta" />
-                        </LinearLayout>
                         <LinearLayout
                             android:id="@+id/lvl_wallet"
                             android:layout_width="match_parent"
@@ -103,7 +70,7 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_weight="1"
                                 android:padding="5dp"
-                                android:text="Wallet Amount"
+                                android:text="Mon Budget"
                                 android:textColor="@color/colorBalck"
                                 android:textSize="16dp"
                                 android:textStyle="bold" />
@@ -207,7 +174,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:padding="3dp"
-                                    android:text="Discount"
+                                    android:text="Remise"
                                     android:textColor="@color/colorBalck" />
 
                                 <TextView
@@ -289,7 +256,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingBottom="3dp"
-                            android:text="My Current Address" />
+                            android:text="Mon adresse actuelle" />
 
                         <TextView
                             android:id="@+id/txt_address"
@@ -308,7 +275,7 @@
                         android:background="@drawable/rounded_selectd"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Change"
+                        android:text="Modifier"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -328,7 +295,7 @@
                         android:background="@drawable/rounded_green2"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Place order"
+                        android:text="Passer la commande"
                         android:textColor="@color/colorWhite"
                         android:textSize="18dp"
                         android:textStyle="bold" />
@@ -363,7 +330,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Congratulation!"
+                android:text="Félicitations!"
                 android:textColor="@color/colorBalck"
                 android:textSize="26dp"
                 android:textStyle="bold" />
@@ -374,7 +341,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Thank you for ordering. We received your\norder and will begin processing it soon."
+                android:text="Merci d'avoir commandé. Nous avons reçu votre \n order et commencerons bientôt à le traiter."
                 android:textColor="@color/colorBalck"
                 android:textSize="16dp" />
 
@@ -398,10 +365,46 @@
                     android:background="@drawable/rounded_green2"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Track your order"
+                    android:text="Suivre votre commande"
                     android:textColor="@color/colorWhite"
                     android:textSize="18dp"
                     android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorGrey0"
+                android:gravity="center|left"
+                android:padding="5dp"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_iconsticket_filled" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Apply Coupon"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_coopncode"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_righta" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

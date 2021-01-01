@@ -47,6 +47,7 @@ import retrofit2.Call;
 
 import static com.freshfastfood.utils.SessionManager.currncy;
 import static com.freshfastfood.utils.Utiles.isrates;
+import android.util.Log;
 
 public class MyOrderListActivity extends BaseActivity implements GetResult.MyListener {
 
@@ -108,12 +109,12 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
         requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1);
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("OrderList ");
+        getSupportActionBar().setTitle("CommandeListe ");
         getSupportActionBar().setElevation(0);
         custPrograssbar=new CustPrograssbar();
         sessionManager = new SessionManager(MyOrderListActivity.this);
         user = sessionManager.getUserDetails("");
-        String[] descriptionData = {"Pending", "Ready to Ship", "Delivered"};
+        String[] descriptionData = {"En Attente", "Imprimé", "Livré"};
         timeView.setStateDescriptionData(descriptionData);
         timeView.checkStateCompleted(true);
         Intent intent = getIntent();
@@ -179,16 +180,20 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
                         lvlCouponcode.setVisibility(View.VISIBLE);
 
                     }
-                    if (myOrder.getmIsrated().equalsIgnoreCase("No") && myOrder.getStatus().equalsIgnoreCase("completed")) {
-                        item.setVisible(true);
-                    } else {
-                        item.setVisible(false);
-                    }
-                    if (myOrder.getStatus().equalsIgnoreCase("processing") || myOrder.getStatus().equalsIgnoreCase(getResources().getString(R.string.pic_myslf))) {
-                        itemC.setVisible(true);
-                    } else {
-                        itemC.setVisible(false);
-                    }
+                    Log.e("Is rated +++",myOrder.getmIsrated());
+                    Log.e("Get Status +++",myOrder.getStatus());
+
+
+//                    if (myOrder.getmIsrated().equalsIgnoreCase("No") && myOrder.getStatus().equalsIgnoreCase("completed")) {
+//                        item.setVisible(true);
+//                    } else {
+//                        item.setVisible(false);
+//                    }
+//                    if (myOrder.getStatus().equalsIgnoreCase("processing") || myOrder.getStatus().equalsIgnoreCase(getResources().getString(R.string.pic_myslf))) {
+//                        itemC.setVisible(true);
+//                    } else {
+//                        itemC.setVisible(false);
+//                    }
                     if ( myOrder.getpMethod().equalsIgnoreCase(getResources().getString(R.string.pic_myslf))) {
                         timeView.setVisibility(View.GONE);
                     }
@@ -257,7 +262,7 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
         item = menu.findItem(R.id.item_rates);
         itemC = menu.findItem(R.id.item_cancel);
         item.setVisible(false);
-        itemC.setVisible(false);
+        itemC.setVisible(true);
         return true;
     }
 
@@ -291,7 +296,9 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
     @Override
     protected void onResume() {
         super.onResume();
+
         if (item != null && isrates) {
+//            Log.e("item item +++", "item if");
             isrates = false;
             item.setVisible(false);
         }

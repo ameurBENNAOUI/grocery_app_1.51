@@ -57,7 +57,7 @@
                                 android:drawableLeft="@drawable/ic_circle"
                                 android:drawablePadding="5dp"
                                 android:padding="2dp"
-                                android:text="Order ID:"
+                                android:text="Commande ID:"
                                 android:textColor="@color/colorGrey" />
 
                             <TextView
@@ -163,7 +163,7 @@
                                 android:drawableLeft="@drawable/ic_circle"
                                 android:drawablePadding="5dp"
                                 android:padding="2dp"
-                                android:text="Subtotal:"
+                                android:text="SousTotal:"
                                 android:textColor="@color/colorGrey" />
 
                             <TextView
@@ -187,7 +187,7 @@
                                 android:drawableLeft="@drawable/ic_circle"
                                 android:drawablePadding="5dp"
                                 android:padding="2dp"
-                                android:text="Delivery:"
+                                android:text="Livraison:"
                                 android:textColor="@color/colorGrey" />
 
                             <TextView
@@ -285,7 +285,7 @@
                                 android:drawableLeft="@drawable/ic_circle"
                                 android:drawablePadding="5dp"
                                 android:padding="2dp"
-                                android:text="wallet Discount"
+                                android:text="Remise :"
                                 android:textColor="@color/colorGrey" />
 
                             <TextView
@@ -413,7 +413,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:padding="5dp"
-        android:text="You need to pickup order by seller shop Seller address you can find on contact page"
+        android:text="Vous devez récupérer votre commande en vous rendant à la boutique Etudiant Bibliotheque, adresse que vous trouverez sur la page contact"
         android:textColor="@color/colorRad"
         android:textSize="14dp"
         android:visibility="gone" />

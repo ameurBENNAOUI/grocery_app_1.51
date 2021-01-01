@@ -75,7 +75,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="3dp"
-                            android:text="Home"
+                            android:text="Accueil"
                             android:textColor="@color/colorBalck"
                             android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="3dp"
-                            android:text="My Orders"
+                            android:text="Mes Commandes"
                             android:textColor="@color/colorBalck"
                             android:textStyle="bold" />
 
@@ -128,7 +128,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="3dp"
-                            android:text="My Address"
+                            android:text="Mon Adresse"
                             android:textColor="@color/colorBalck"
                             android:textStyle="bold" />
 
@@ -154,7 +154,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="3dp"
-                            android:text="My Profile"
+                            android:text="Profile"
                             android:textColor="@color/colorBalck"
                             android:textStyle="bold" />
 
@@ -206,7 +206,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="3dp"
-                            android:text="Contact us"
+                            android:text="Contactez Nous"
                             android:textColor="@color/colorBalck"
                             android:textStyle="bold" />
 
@@ -233,7 +233,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="3dp"
-                            android:text="Share"
+                            android:text="Partager"
                             android:textColor="@color/colorBalck"
                             android:textStyle="bold" />
 
@@ -259,7 +259,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="3dp"
-                            android:text="Logout"
+                            android:text="Se Déconnecter"
                             android:textColor="@color/colorBalck"
                             android:textStyle="bold" />
 
@@ -283,7 +283,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:padding="5dp"
-                            android:text="About"
+                            android:text="À propos"
                             android:textColor="@color/colorBalck" />
 
                     </LinearLayout>
@@ -316,7 +316,7 @@
                         android:onClick="ClickNavigation"
                         android:orientation="horizontal"
                         android:padding="5dp"
-                        android:visibility="visible">
+                        android:visibility="invisible">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -333,10 +333,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:visibility="visible"
                         android:onClick="ClickNavigation"
                         android:orientation="horizontal"
-                        android:padding="5dp">
+                        android:padding="5dp"
+                        android:visibility="invisible">
 
                         <TextView
                             android:layout_width="match_parent"

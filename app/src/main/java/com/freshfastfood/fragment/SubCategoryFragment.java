@@ -126,6 +126,10 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
         HomeActivity.custPrograssbar.prograssCreate(getActivity());
         JSONObject jsonObject = new JSONObject();
         try {
+            Log.w("user id ===",user.getId());
+
+            jsonObject.put("uid", user.getId());
+
             jsonObject.put("purview", purview);
             jsonObject.put("year", year);
 //            jsonObject.put("year", year);
@@ -172,7 +176,7 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
         HomeActivity.getInstance().serchviewShow();
         HomeActivity.getInstance().setFrameMargin(60);
         if (user != null)
-            HomeActivity.getInstance().titleChange("Hello " + user.getName());
+            HomeActivity.getInstance().titleChange("Bienvenue " + user.getName());
 
     }
 }

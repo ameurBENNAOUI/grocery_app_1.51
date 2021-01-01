@@ -202,7 +202,7 @@ public class CouponAdp extends RecyclerView.Adapter<CouponAdp.MyViewHolder> {
         @Override
         public void updateDrawState(TextPaint ds) {
             ds.setUnderlineText(isUnderline);
-            ds.setColor(Color.parseColor("#ffce33"));
+            ds.setColor(Color.parseColor("#2ecc71"));
         }
 
         @Override

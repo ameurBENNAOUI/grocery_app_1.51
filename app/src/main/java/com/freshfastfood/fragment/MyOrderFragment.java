@@ -97,8 +97,10 @@ public class MyOrderFragment extends Fragment implements GetResult.MyListener {
         try {
 
             if(callNo.equalsIgnoreCase("1")){
+                Log.e("gson gson",result.toString());
                 Gson gson = new Gson();
                 Order order = gson.fromJson(result.toString(), Order.class);
+
                 if (order.getResult().equals("true")) {
                     orderData = new ArrayList<>();
                     orderData.addAll(order.getData());
@@ -148,7 +150,7 @@ public class MyOrderFragment extends Fragment implements GetResult.MyListener {
                 LinearLayout lvl_cancel = view.findViewById(R.id.lvl_cancel);
                 TextView txt_status = view.findViewById(R.id.txt_status);
                 TextView txt_total = view.findViewById(R.id.txt_total);
-                txt_orderid.setText("Order ID:" + orderData.get(i).getId());
+                txt_orderid.setText("Commande ID:" + orderData.get(i).getId());
                 txt_total.setText(sessionManager.getStringData(currncy) + orderData.get(i).getTotalamt());
                 if (orderData.get(i).getStatus().equalsIgnoreCase("completed")) {
                     txt_status.setTextColor(getResources().getColor(R.color.colorPrimary));
@@ -167,16 +169,16 @@ public class MyOrderFragment extends Fragment implements GetResult.MyListener {
                         AlertDialog.Builder builder;
                         builder = new AlertDialog.Builder(getActivity());
                         //Setting message manually and performing action on button click
-                        builder.setMessage("Are you sure cancel this order ?")
+                        builder.setMessage("Êtes-vous sûr d'annuler cette commande?")
                                 .setCancelable(false)
-                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
 
                                         positionOrd=finalI;
                                         getOdercancle(orderData.get(finalI).getId());
                                     }
                                 })
-                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                .setNegativeButton("Non", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         //  Action for 'NO' Button
                                         dialog.cancel();

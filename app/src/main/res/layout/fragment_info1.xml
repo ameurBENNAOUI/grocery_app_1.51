@@ -40,7 +40,7 @@
             android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Select Grocery Item"
+            android:text="Choisissez des Cours"
             android:textColor="@color/colorBalck"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -52,7 +52,7 @@
             android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Order grocery and get delivery in the fastest\ntime in the town"
+            android:text="Commandez votre cours et obtenez la livraison le plus rapidement  en votre ِZone"
             android:textColor="@color/colorBalck"
             android:textSize="14dp"
             android:textStyle="bold" />

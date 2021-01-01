@@ -51,9 +51,9 @@
                     android:id="@+id/btn_next"
                     android:layout_width="100dp"
                     android:layout_height="42dp"
-                    android:gravity="center"
-                    android:text="Next"
                     android:background="@drawable/rounded_add"
+                    android:gravity="center"
+                    android:text="Suivant"
                     android:textColor="@color/colorBalck"
                     android:textSize="16dp"
                     android:textStyle="bold" />

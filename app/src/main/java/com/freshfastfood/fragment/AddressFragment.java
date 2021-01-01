@@ -117,8 +117,10 @@ public class AddressFragment extends Fragment implements GetResult.MyListener {
                                      int position) {
             Address address = addressList.get(position);
             holder.offerSelect.setChecked(lastSelectedPosition == position);
-            holder.txtAddressful.setText(address.getHno() + "," + address.getSociety() + "," + address.getArea() + "," + address.getLandmark() + "," + address.getName());
-            holder.txtAddressname.setText("" + address.getType());
+//            holder.txtAddressful.setText(address.getHno() + "," + address.getSociety() + "," + address.getArea() + "," + address.getLandmark() + "," + address.getName());
+            holder.txtAddressful.setText(address.getArea() + "," + address.getName());
+
+            holder.txtAddressname.setText("" + address.getName());
             if (!isSelect) {
                 holder.offerSelect.setVisibility(View.GONE);
             }

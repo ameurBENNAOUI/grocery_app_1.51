@@ -27,59 +27,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_editetext"
-                android:hint="Name"
+                android:hint="Nom"
                 android:padding="10dp"
                 android:textColor="@color/colorGrey2" />
 
-
-            <EditText
-                android:id="@+id/ed_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_editetext"
-                android:hint="Address Type"
-                  android:padding="10dp"
-                android:textColor="@color/colorGrey2" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/ed_hoousno"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1.5"
-                    android:background="@drawable/rounded_editetext"
-                    android:hint="Home No"
-                      android:padding="10dp"
-                    android:textColor="@color/colorGrey2" />
-
-
-                <EditText
-                    android:id="@+id/ed_society"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounded_editetext"
-                    android:hint="Society"
-                      android:padding="10dp"
-                    android:textColor="@color/colorGrey2" />
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:padding="2dp"
-                android:text="Area"
+                android:text="Zone"
                 android:textSize="16dp" />
 
             <LinearLayout
@@ -103,8 +61,10 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_editetext"
                 android:hint="Landmark"
-                  android:padding="10dp"
-                android:textColor="@color/colorGrey2" />
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="@color/colorGrey2"
+                android:visibility="invisible" />
 
 
             <EditText
@@ -116,8 +76,10 @@
                 android:hint="Pincode"
                 android:inputType="number"
                 android:maxLength="6"
-                  android:padding="10dp"
-                android:textColor="@color/colorGrey2" />
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="@color/colorGrey2"
+                android:visibility="invisible" />
 
 
 
@@ -136,9 +98,9 @@
                     android:id="@+id/txt_save"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:background="@drawable/rounded_green"
-                    android:text="Save"
+                    android:gravity="center"
+                    android:text="Enregistrer"
                     android:textColor="@color/colorWhite"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -147,6 +109,53 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="25dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/ed_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_editetext"
+            android:hint="Address Type"
+            android:padding="10dp"
+            android:text="dd"
+            android:textColor="@color/colorGrey2"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <EditText
+                android:id="@+id/ed_hoousno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/rounded_editetext"
+                android:hint="Home No"
+                android:padding="10dp"
+                android:text="sss"
+                android:textColor="@color/colorGrey2"
+                tools:targetApi="0" />
+
+
+            <EditText
+                android:id="@+id/ed_society"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_editetext"
+                android:hint="Society"
+                android:padding="10dp"
+                android:text="zzz"
+                android:textColor="@color/colorGrey2" />
         </LinearLayout>
 
     </LinearLayout>

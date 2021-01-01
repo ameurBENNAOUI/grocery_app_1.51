@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="2"
                 android:padding="2dp"
-                android:text="Self Pickup"
+                android:text="Récupérer Moi Meme"
                 android:textColor="@color/colorBalck"
 
                 android:textStyle="bold" />

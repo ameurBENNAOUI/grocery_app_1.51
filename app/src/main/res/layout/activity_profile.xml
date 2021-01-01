@@ -34,11 +34,11 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/rounded_editetext"
                         android:drawableLeft="@drawable/ic_perm_"
-                        android:textColorHint="@color/colorGrey"
                         android:drawablePadding="10dp"
                         android:hint="Name"
                         android:padding="12dp"
-                        android:textColor="@color/colorGrey2" />
+                        android:textColor="@color/colorGrey2"
+                        android:textColorHint="@color/colorGrey" />
                 </LinearLayout>
 
 
@@ -67,35 +67,24 @@
                     android:layout_marginTop="15dp"
                     android:layout_weight="1">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.2"
-                        android:background="@drawable/rounded_editetext">
-
-                        <Spinner
-                            android:id="@+id/spinner"
-                            android:layout_width="fill_parent"
-                            android:layout_height="45dp"
-                            android:prompt="@string/spinner_title" />
-                    </LinearLayout>
-
                     <View
                         android:layout_width="10dp"
                         android:layout_height="1dp" />
 
                     <EditText
                         android:id="@+id/ed_alternatmob"
-                        android:layout_width="match_parent"
+                        android:layout_width="349dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:drawableLeft="@drawable/ic_phone"
                         android:background="@drawable/rounded_editetext"
+                        android:drawableLeft="@drawable/ic_phone"
+                        android:drawablePadding="10dp"
                         android:hint="Mobile"
                         android:inputType="phone"
                         android:padding="12dp"
                         android:textColor="@color/colorGrey2"
                         android:textColorHint="@color/colorGrey" />
+
                 </LinearLayout>
 
 
@@ -111,11 +100,11 @@
                         android:background="@drawable/rounded_editetext"
                         android:drawableLeft="@drawable/ic_lock"
                         android:drawablePadding="10dp"
-                        android:hint="Password"
-                        android:textColorHint="@color/colorGrey"
+                        android:hint="Mot de Passe"
                         android:inputType="textPassword"
                         android:padding="12dp"
-                        android:textColor="@color/colorGrey2" />
+                        android:textColor="@color/colorGrey2"
+                        android:textColorHint="@color/colorGrey" />
                 </LinearLayout>
 
                 <View
@@ -123,19 +112,19 @@
                     android:layout_height="25dp" />
 
 
-                    <TextView
-                        android:id="@+id/txt_save"
-                        android:layout_width="160dp"
-                        android:layout_height="48dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginRight="20dp"
-                        android:elevation="10dp"
-                        android:background="@drawable/rounded_green"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="Save"
-                        android:textColor="@color/colorWhite" />
+                <TextView
+                    android:id="@+id/txt_save"
+                    android:layout_width="160dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/rounded_green"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:text="Enregistrer"
+                    android:textColor="@color/colorWhite" />
 
                 <View
                     android:layout_width="match_parent"
@@ -146,6 +135,20 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.2"
+            android:background="@drawable/rounded_editetext"
+            android:visibility="invisible">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:prompt="@string/spinner_title" />
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

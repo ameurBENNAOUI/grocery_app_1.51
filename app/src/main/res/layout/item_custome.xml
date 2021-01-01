@@ -165,7 +165,7 @@
             android:background="@drawable/outofstock_red"
             android:gravity="center|right"
             android:padding="5dp"
-            android:text="  Out of Stock  "
+            android:text="En rupture de stock"
             android:textColor="@color/colorWhite"
             android:textSize="10dp" />
     </LinearLayout>

@@ -155,9 +155,23 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
     public void onClickItem(String titel, int position) {
         homeActivity.showMenu();
         Bundle args = new Bundle();
-        args.putInt("id", position);
-        args.putString("titel", titel);
-        Fragment fragment = new SubCategoryFragment();
+
+
+        args.putString("st","c1");
+
+
+
+        args.putInt("purview", position);
+        args.putInt("year",0);
+        args.putInt("model",0);
+
+
+        CategoryFragment fragment = new CategoryFragment();
+
+
+//        args.putInt("id", position);
+//        args.putString("titel", titel);
+//        Fragment fragment = new SubCategoryFragment();
         fragment.setArguments(args);
         HomeActivity.getInstance().callFragment(fragment);
     }
@@ -179,6 +193,7 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
                 CategoryFragment fragment = new CategoryFragment();
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("arraylist", (Serializable) categoryList);
+
                 bundle.putString("st","c0");
                 bundle.putInt("purview",0);
                 bundle.putInt("year",0);
@@ -271,7 +286,7 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
         HomeActivity.getInstance().setFrameMargin(60);
         HomeActivity.getInstance().serchviewShow();
         if (user != null)
-            HomeActivity.getInstance().titleChange("Hello " + user.getName());
+            HomeActivity.getInstance().titleChange("Bienvenue " + user.getName());
 
         if (dynamicDataList != null) {
             setJoinPlayrList(lvlSelected, dynamicDataList);

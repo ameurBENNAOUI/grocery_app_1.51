@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="5dp"
-                        android:text="Stay Home \nFood &amp; Groceries"
+                        android:text="Specialités"
                         android:textColor="@color/colorBalck"
                         android:textSize="18dp"
                         android:textStyle="bold" />
@@ -81,7 +81,7 @@
                             android:drawableRight="@drawable/ic_right"
                             android:gravity="right|center"
                             android:padding="5dp"
-                            android:text="View all"
+                            android:text="Voir Tout"
                             android:textColor="@color/colorBalck"
                             android:textSize="14dp"
                             android:textStyle="normal" />
@@ -109,7 +109,7 @@
                         android:layout_weight="1"
                         android:gravity="center|left"
                         android:padding="5dp"
-                        android:text="Want to shop for"
+                        android:text="Produits"
                         android:textColor="@color/colorBalck"
                         android:textSize="18dp"
                         android:textStyle="bold" />
@@ -130,7 +130,7 @@
                             android:drawableRight="@drawable/ic_right"
                             android:gravity="right|center"
                             android:padding="5dp"
-                            android:text="View all"
+                            android:text="Voir Tout"
                             android:textColor="@color/colorBalck"
                             android:textSize="14dp"
                             android:textStyle="normal" />
@@ -162,13 +162,15 @@
                     android:text="Three Easy Steps"
                     android:textColor="@color/colorBalck"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="invisible">
 
                     <LinearLayout
                         android:layout_width="match_parent"

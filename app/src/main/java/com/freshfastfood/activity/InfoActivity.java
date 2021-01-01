@@ -62,10 +62,10 @@ public class InfoActivity extends AppCompatActivity {
 
                 if (position == 0 || position == 1) {
                     btnSkip.setVisibility(View.VISIBLE);
-                    btnNext.setText("Next");
+                    btnNext.setText("Suivant");
                 } else if (position == 2) {
                     btnSkip.setVisibility(View.GONE);
-                    btnNext.setText("Finish");
+                    btnNext.setText("Terminer");
                 }
             }
 
@@ -87,9 +87,9 @@ public class InfoActivity extends AppCompatActivity {
                     sessionManager.setBooleanData(isopen, true);
                     User user = new User();
                     user.setId("0");
-                    user.setName("User");
-                    user.setEmail("user@gmail.com");
-                    user.setMobile("+91 8888888888");
+                    user.setName("Etudiant");
+                    user.setEmail("Etudiant@Etudiant.com");
+                    user.setMobile("+213 657274307");
                     sessionManager.setUserDetails("", user);
                     startActivity(new Intent(InfoActivity.this, HomeActivity.class));
                     finish();
@@ -99,9 +99,9 @@ public class InfoActivity extends AppCompatActivity {
                 sessionManager.setBooleanData(isopen, true);
                 User user = new User();
                 user.setId("0");
-                user.setName("User");
-                user.setEmail("user@gmail.com");
-                user.setMobile("+91 8888888888");
+                user.setName("Etudiant");
+                user.setEmail("Etudiant@Etudiant.com");
+                user.setMobile("+213 657274307");
                 sessionManager.setUserDetails("", user);
                 startActivity(new Intent(InfoActivity.this, HomeActivity.class));
                 finish();

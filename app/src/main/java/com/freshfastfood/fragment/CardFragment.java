@@ -218,10 +218,10 @@ public class CardFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     AlertDialog myDelete = new AlertDialog.Builder(getActivity())
-                            .setTitle("Delete")
-                            .setMessage("Do you want to Delete")
+                            .setTitle("Supprimer")
+                            .setMessage("Voulez-vous supprimer")
                             .setIcon(R.drawable.ic_delete)
-                            .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                            .setPositiveButton("Supprimer", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int whichButton) {
                                     Log.d("sdj", "" + whichButton);
                                     dialog.dismiss();
@@ -233,7 +233,7 @@ public class CardFragment extends Fragment {
                                 }
 
                             })
-                            .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            .setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     Log.d("sdj", "" + which);
                                     dialog.dismiss();
@@ -322,11 +322,11 @@ public class CardFragment extends Fragment {
         if (sessionManager.getBooleanData(login)) {
             if (sessionManager.getIntData(oMin) <= total) {
                 HomeActivity.getInstance().serchviewHide();
-                HomeActivity.getInstance().titleChange("Placed Order Now");
+                HomeActivity.getInstance().titleChange("Passé la commande maintenant");
                 PlaceOrderFragment fragment = new PlaceOrderFragment();
                 HomeActivity.getInstance().callFragment(fragment);
             } else {
-                Toast.makeText(getActivity(), "Minimum order value of " + sessionManager.getStringData(currncy) + " " + sessionManager.getIntData(oMin), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Valeur de commande minimum de " + sessionManager.getStringData(currncy) + " " + sessionManager.getIntData(oMin), Toast.LENGTH_SHORT).show();
             }
         } else {
             startActivity(new Intent(getActivity(), LoginActivity.class));

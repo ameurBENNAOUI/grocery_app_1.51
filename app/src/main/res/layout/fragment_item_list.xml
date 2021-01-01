@@ -73,7 +73,7 @@
                 android:drawablePadding="10dp"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="Items"
+                android:text="Articles"
                 android:textColor="@color/colorBalck"
                 android:textSize="14dp"
                 android:textStyle="bold" />
@@ -118,7 +118,7 @@
                     android:background="@drawable/rounded_add"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="  View Cart  "
+                    android:text="Votre Panier"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14dp"
                     android:textStyle="bold" />
