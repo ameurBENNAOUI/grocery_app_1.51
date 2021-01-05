@@ -25,6 +25,7 @@ import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -40,6 +41,7 @@ import butterknife.OnClick;
 import retrofit2.Call;
 
 import static com.freshfastfood.utils.Utiles.isvarification;
+
 
 public class VerifyPhoneActivity extends AppCompatActivity implements GetResult.MyListener {
     @BindView(R.id.txt_mob)
@@ -141,13 +143,22 @@ public class VerifyPhoneActivity extends AppCompatActivity implements GetResult.
     }
 
     private void sendVerificationCode(String number) {
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                number,
-                60,
-                TimeUnit.SECONDS,
-                TaskExecutors.MAIN_THREAD,
-                mCallBack
-        );
+//        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+//                number,
+//                60,
+//                TimeUnit.SECONDS,
+//                TaskExecutors.MAIN_THREAD,
+//                mCallBack
+//        );
+
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber(number)       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setActivity(this)                 // Activity (for callback binding)
+                        .setCallbacks(mCallBack)          // OnVerificationStateChangedCallbacks
+                        .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
