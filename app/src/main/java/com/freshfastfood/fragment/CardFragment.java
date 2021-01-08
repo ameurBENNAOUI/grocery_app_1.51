@@ -85,7 +85,7 @@ public class CardFragment extends Fragment {
         Cursor res = databaseHelper.getAllData();
         if (res.getCount() == 0) {
             lvlNotfound.setVisibility(View.VISIBLE);
-            txtNotfound.setText("Cart Empty");
+            txtNotfound.setText("Panier vide");
             lvlBacket.setVisibility(View.GONE);
 
         }
@@ -288,7 +288,7 @@ public class CardFragment extends Fragment {
         int totalItem = 0;
         if (res.getCount() == 0) {
             lvlNotfound.setVisibility(View.VISIBLE);
-            txtNotfound.setText("Cart Empty");
+            txtNotfound.setText("Panier vide");
             lvlBacket.setVisibility(View.GONE);
 
         }
