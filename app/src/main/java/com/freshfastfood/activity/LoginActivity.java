@@ -19,7 +19,7 @@ import com.freshfastfood.utils.Utiles;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.onesignal.OneSignal;
+//import com.onesignal.OneSignal;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements GetResult.MyList
             if (response.getResult().equals("true")) {
                 sessionManager.setUserDetails("", response.getUser());
                 sessionManager.setBooleanData(login,true);
-                OneSignal.sendTag("userId", response.getUser().getId());
+//                OneSignal.sendTag("userId", response.getUser().getId());
                 startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 finish();
             }

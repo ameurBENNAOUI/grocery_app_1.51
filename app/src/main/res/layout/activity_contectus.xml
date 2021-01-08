@@ -31,10 +31,10 @@
                         android:id="@+id/txt_contac"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:autoLink="all|web|map|email"
                         android:padding="5dp"
                         android:text="Address"
-                        android:textColor="@color/colorBalck"
-                         />
+                        android:textColor="@color/colorBalck" />
 
 
                 </LinearLayout>

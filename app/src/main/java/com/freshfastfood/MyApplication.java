@@ -3,7 +3,7 @@ package com.freshfastfood;
 import android.app.Application;
 import android.content.Context;
 
-import com.onesignal.OneSignal;
+//import com.onesignal.OneSignal;
 
 public class MyApplication extends Application {
     public static Context mContext;
@@ -12,9 +12,9 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = this;
-        OneSignal.startInit(this)
-                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
-                .unsubscribeWhenNotificationsAreDisabled(true)
-                .init();
+//        OneSignal.startInit(this)
+//                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+//                .unsubscribeWhenNotificationsAreDisabled(true)
+//                .init();
     }
 }

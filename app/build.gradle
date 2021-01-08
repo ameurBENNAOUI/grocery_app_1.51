@@ -4,10 +4,10 @@ buildscript {
         maven { url 'https://plugins.gradle.org/m2/' }
     }
     dependencies {
-        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
+//        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
     }
 }
-apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+//apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -17,11 +17,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        manifestPlaceholders = [
-                onesignal_app_id               : '7868a2d2-cd77-4d47-b4ad-7a069bb3dbc6',
-                // Project number pulled from dashboard, local value is ignored.
-                onesignal_google_project_number: 'REMOTE'
-        ]
+//        manifestPlaceholders = [
+//                onesignal_app_id               : '7868a2d2-cd77-4d47-b4ad-7a069bb3dbc6',
+//                // Project number pulled from dashboard, local value is ignored.
+//                onesignal_google_project_number: 'REMOTE'
+//        ]
     }
     buildTypes {
         release {
@@ -72,7 +72,7 @@ dependencies {
 //    implementation 'com.google.firebase:firebase-auth:19.3.1'
     implementation 'com.google.firebase:firebase-auth:20.0.1'
     implementation 'com.google.firebase:firebase-messaging:20.1.6'
-    implementation 'com.onesignal:OneSignal:3.13.2'
+//    implementation 'com.onesignal:OneSignal:3.13.2'
     implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0'
     implementation 'com.kofigyan.stateprogressbar:stateprogressbar:1.0.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
