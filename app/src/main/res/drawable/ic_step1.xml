@@ -8,16 +8,16 @@
       android:fillColor="#e6e6e6"/>
   <path
       android:pathData="M65.379,46.357v0.438s0.789,2.806 -0.175,2.806 -1.315,-2.719 -1.315,-2.719v-0.526Z"
-      android:fillColor="#ffb8b8"/>
+      android:fillColor="#2ecc71"/>
   <path
       android:pathData="M47.84,36.357l0.175,-0.7s0.965,-2.192 1.754,-1.754 -0.351,2.1 -0.351,2.1l-0.175,0.438Z"
-      android:fillColor="#ffb8b8"/>
+      android:fillColor="#2ecc71"/>
   <path
       android:pathData="M53.453,67.754l0.175,1.491 1.666,0.263v-1.929Z"
-      android:fillColor="#ffb8b8"/>
+      android:fillColor="#2ecc71"/>
   <path
       android:pathData="M62.66,67.315l0.175,2.192 1.929,-0.263 -0.351,-2.1Z"
-      android:fillColor="#ffb8b8"/>
+      android:fillColor="#2ecc71"/>
   <path
       android:pathData="M52.664,50.654l-0.351,0.088 0.965,9.3v8.331l2.455,-0.439 1.228,-14.645 3.771,7.191 1.842,7.279 2.894,-0.526 -2.368,-9.12 -1.578,-8.682Z"
       android:fillColor="#2f2e41"/>
@@ -29,10 +29,10 @@
       android:fillColor="#2f2e41"/>
   <path
       android:pathData="M50.568,33.597a2.315,2.315 0,1 0,4.63 0a2.315,2.315 0,1 0,-4.63 0z"
-      android:fillColor="#ffb8b8"/>
+      android:fillColor="#2ecc71"/>
   <path
       android:pathData="M52.702,35.438l1.228,1.491 2.192,-1.842 -1.578,-1.228Z"
-      android:fillColor="#ffb8b8"/>
+      android:fillColor="#2ecc71"/>
   <path
       android:pathData="M53.367,36.973l0.072,-0.649 2.462,-1.414 3.344,-0.317a0.79,0.79 0,0 1,0.861 0.712l1.241,13.156 0.438,1.14s-7.717,4.385 -9.471,1.14l1.315,-6.84 -2.719,-5.174Z"
       android:fillColor="#d0cde1"/>
@@ -47,7 +47,7 @@
       android:fillColor="#2f2e41"/>
   <path
       android:pathData="M53.5098,33.5187a0.453,0.252 70.023,1 0,0.4737 -0.1722a0.453,0.252 70.023,1 0,-0.4737 0.1722z"
-      android:fillColor="#ffb8b8"/>
+      android:fillColor="#2ecc71"/>
   <path
       android:pathData="M43.075,17.409h-0.4L42.675,6.381a6.381,6.381 0,0 0,-6.381 -6.381L12.934,0a6.381,6.381 0,0 0,-6.381 6.381v60.484a6.381,6.381 0,0 0,6.381 6.381L36.292,73.246a6.381,6.381 0,0 0,6.381 -6.381L42.673,25.254h0.4Z"
       android:fillColor="#3f3d56"/>

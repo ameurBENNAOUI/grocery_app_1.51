@@ -429,7 +429,7 @@ public class HomeActivity extends AppCompatActivity {
                 txtActiontitle.setVisibility(View.VISIBLE);
                 rltNoti.setVisibility(View.GONE);
                 rltCart.setVisibility(View.VISIBLE);
-                txtActiontitle.setText("MyCart");
+                txtActiontitle.setText("Mon panier");
                 fragment = new CardFragment();
                 callFragment(fragment);
                 break;

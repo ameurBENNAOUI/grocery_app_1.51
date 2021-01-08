@@ -338,7 +338,7 @@ public class CardFragment extends Fragment {
         super.onResume();
         HomeActivity.getInstance().serchviewShow();
         HomeActivity.getInstance().setFrameMargin(60);
-        HomeActivity.getInstance().titleChange("MyCart");
+        HomeActivity.getInstance().titleChange("Mon panier");
 
     }
 }
